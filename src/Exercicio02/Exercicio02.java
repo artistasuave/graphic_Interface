@@ -85,7 +85,6 @@ public class Exercicio02 implements JFrameBaseInterface {
     }
 
     private void calcular() throws HeadlessException {
-        // number validation - implement the short validation
         try {
             int numero = Integer.parseInt(jTextFieldNumero.getText().trim());
             int calculo = 0;
