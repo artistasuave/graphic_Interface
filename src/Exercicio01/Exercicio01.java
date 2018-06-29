@@ -59,20 +59,20 @@ public class Exercicio01 implements JFrameBaseInterface {
 
     @Override
     public void gerarDimensoes() {
-        jLabelNome.setSize(20, 20);
-        jLabelSobrenome.setSize(20, 20);
-        jTextFieldNome.setSize(30, 20);
-        jTextFieldSobrenome.setSize(30, 20);
-        jButtonConcatenar.setSize(40, 40);
+        jLabelNome.setSize(50, 20);
+        jLabelSobrenome.setSize(80, 20);
+        jTextFieldNome.setSize(80, 20);
+        jTextFieldSobrenome.setSize(80, 20);
+        jButtonConcatenar.setSize(170, 100);
     }
 
     @Override
     public void gerarLocalizacoes() {
         jLabelNome.setLocation(10, 10);
-        jLabelSobrenome.setLocation(45, 10);
+        jLabelSobrenome.setLocation(100, 10);
         jTextFieldNome.setLocation(10, 45);
-        jTextFieldSobrenome.setLocation(45, 45);
-        jButtonConcatenar.setLocation(100, 100);
+        jTextFieldSobrenome.setLocation(100, 45);
+        jButtonConcatenar.setLocation(10, 100);
     }
 
     public void acaoBotaoConcatenar() {
@@ -82,7 +82,7 @@ public class Exercicio01 implements JFrameBaseInterface {
 
                 String nome = jTextFieldNome.getText().trim().toUpperCase();
                 String sobrenome = jTextFieldSobrenome.getText().trim().toUpperCase();
-
+                //TODO Review try catch because it isn't working as expected
                 //name validation
                 try {
                     if (nome.isEmpty()) {
@@ -117,7 +117,7 @@ public class Exercicio01 implements JFrameBaseInterface {
                     JOptionPane.showMessageDialog(null, "Insira somente letras nos campos");
                 }
                 
-                JOptionPane.showMessageDialog(null, "Os nomes concatenados são: "
+                JOptionPane.showMessageDialog(null, "O nome completo é: "
                 + nome + " " + sobrenome);
             }
 

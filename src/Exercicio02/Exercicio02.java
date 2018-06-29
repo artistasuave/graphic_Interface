@@ -1,11 +1,15 @@
 package Exercicio02;
 
 import BaseInterface.JFrameBaseInterface;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -21,10 +25,11 @@ public class Exercicio02 implements JFrameBaseInterface {
     public Exercicio02() {
         gerarTela();
         instanciarComponentes();
-        adicionarComponentes();
         gerarDimensoes();
         gerarLocalizacoes();
+        adicionarComponentes();
         acaoBotaoCalcular();
+        adicionarKeyPressed();
     }
 
     @Override
@@ -32,7 +37,7 @@ public class Exercicio02 implements JFrameBaseInterface {
         screen01 = new JFrame();
         screen01.setLayout(null);
         screen01.setLocationRelativeTo(null);
-        screen01.setSize(500, 500);
+        screen01.setSize(300, 300);
         screen01.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         screen01.setVisible(true);
     }
@@ -60,21 +65,59 @@ public class Exercicio02 implements JFrameBaseInterface {
 
     @Override
     public void gerarLocalizacoes() {
-        jLabelNumero.setLocation(20,20);
-        jTextFieldNumero.setLocation(20,50);
-        jButtonTabuada.setLocation(20, 65);
+        jLabelNumero.setLocation(20, 20);
+        jTextFieldNumero.setLocation(20, 50);
+        jButtonTabuada.setLocation(20, 80);
     }
-    
-    public void acaoBotaoCalcular(){
-        jButtonTabuada.addActionListener(new ActionListener(){
+
+    public void acaoBotaoCalcular() {
+        jButtonTabuada.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
-        
-        // number validation
-                         
+
+                calcular();
+
             }
-            
+
+        }
+        );
+
+    }
+
+    private void calcular() throws HeadlessException {
+        // number validation - implement the short validation
+        try {
+            int numero = Integer.parseInt(jTextFieldNumero.getText().trim());
+            int calculo = 0;
+
+            calculo = (numero * 50);
+            JOptionPane.showMessageDialog(null, "O número inserido multiplicado por 50 é: " + calculo);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Insira apenas numerais no campo solicitado");
+            jTextFieldNumero.requestFocus();
+            return;
+        }
+    }
+
+    private void adicionarKeyPressed() {
+        jTextFieldNumero.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                switch (e.getKeyCode()) {
+                    case KeyEvent.VK_ENTER:
+                        calcular();
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+            }
+
         });
     }
 

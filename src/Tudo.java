@@ -103,9 +103,9 @@ public class Tudo implements JFrameBaseInterface {
     }
     
      public void acaoJButton01() {
-     jButton00.addActionListener(new ActionListener() {
+     jButton01.addActionListener(new ActionListener() {
      @Override
-     public void actionPerformed(ActionEvent e) {
+     public void actionPerformed(ActionEvent en) {
      new Exercicio02();
      }
 
@@ -113,7 +113,7 @@ public class Tudo implements JFrameBaseInterface {
      }
 /*
      public void acaoJButton02() {
-     jButton00.addActionListener(new ActionListener() {
+     jButton02.addActionListener(new ActionListener() {
      @Override
      public void actionPerformed(ActionEvent e) {
      new Exercicio03();
@@ -123,7 +123,7 @@ public class Tudo implements JFrameBaseInterface {
      }
 
      public void acaoJButton03() {
-     jButton00.addActionListener(new ActionListener() {
+     jButton03.addActionListener(new ActionListener() {
      @Override
      public void actionPerformed(ActionEvent e) {
      new Exercicio04();
@@ -133,7 +133,7 @@ public class Tudo implements JFrameBaseInterface {
      }
 
      public void acaoJButton04() {
-     jButton00.addActionListener(new ActionListener() {
+     jButton04.addActionListener(new ActionListener() {
      @Override
      public void actionPerformed(ActionEvent e) {
      new Exercicio05();
@@ -143,7 +143,7 @@ public class Tudo implements JFrameBaseInterface {
      }
 
      public void acaoJButton05() {
-     jButton00.addActionListener(new ActionListener() {
+     jButton05.addActionListener(new ActionListener() {
      @Override
      public void actionPerformed(ActionEvent e) {
      new Exercicio06();
@@ -153,7 +153,7 @@ public class Tudo implements JFrameBaseInterface {
      }
 
      public void acaoJButton06() {
-     jButton00.addActionListener(new ActionListener() {
+     jButton06.addActionListener(new ActionListener() {
      @Override
      public void actionPerformed(ActionEvent e) {
      new Exercicio07();
