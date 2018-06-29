@@ -25,6 +25,7 @@ public class Exercicio01 implements JFrameBaseInterface {
         gerarDimensoes();
         gerarLocalizacoes();
         adicionarComponentes();
+        acaoBotaoConcatenar();
     }
 
     @Override
@@ -79,14 +80,17 @@ public class Exercicio01 implements JFrameBaseInterface {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                String nome = jTextFieldNome.getText().trim().toUpperCase();
+                String sobrenome = jTextFieldSobrenome.getText().trim().toUpperCase();
+
                 //name validation
                 try {
-                    if (jTextFieldNome.getText().trim().isEmpty()) {
+                    if (nome.isEmpty()) {
                         JOptionPane.showMessageDialog(null, "É obrigatório inserir o nome");
                         jTextFieldNome.requestFocus();
                         return;
                     }
-                    if (jTextFieldNome.getText().trim().length() < 3) {
+                    if (nome.length() < 3) {
                         JOptionPane.showMessageDialog(null, "Nome precisa ter pelo menos"
                                 + "3 caracteres");
                         jTextFieldNome.requestFocus();
@@ -95,13 +99,29 @@ public class Exercicio01 implements JFrameBaseInterface {
                 } catch (Exception en) {
                     JOptionPane.showMessageDialog(null, "Insira somente letras nos campos");
                 }
+
+                //surname validation
+                try {
+                    if (sobrenome.isEmpty()) {
+                        JOptionPane.showMessageDialog(null, "É obrigatório inserir o sobrenome");
+                        jTextFieldSobrenome.requestFocus();
+                        return;
+                    }
+                    if (sobrenome.length() < 3) {
+                        JOptionPane.showMessageDialog(null, "O sobrenome precisa ter pelo menos"
+                                + "3 caracteres");
+                        jTextFieldSobrenome.requestFocus();
+                        return;
+                    }
+                } catch (Exception en) {
+                    JOptionPane.showMessageDialog(null, "Insira somente letras nos campos");
+                }
                 
-                //surname
-
-                String nome, sobrenome = "";
-                nome = jTextFieldNome.getText().toUpperCase();
+                JOptionPane.showMessageDialog(null, "Os nomes concatenados são: "
+                + nome + " " + sobrenome);
             }
-        });
 
+        });
+        
     }
 }
