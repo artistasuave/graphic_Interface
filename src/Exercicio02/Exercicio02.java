@@ -28,8 +28,8 @@ public class Exercicio02 implements JFrameBaseInterface {
         gerarDimensoes();
         gerarLocalizacoes();
         adicionarComponentes();
-        acaoBotaoCalcular();
-        adicionarKeyPressed();
+        actionButtonCalcular();
+        addKeyPressed();
     }
 
     @Override
@@ -70,7 +70,7 @@ public class Exercicio02 implements JFrameBaseInterface {
         jButtonTabuada.setLocation(20, 80);
     }
 
-    public void acaoBotaoCalcular() {
+    public void actionButtonCalcular() {
         jButtonTabuada.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -98,7 +98,7 @@ public class Exercicio02 implements JFrameBaseInterface {
         }
     }
 
-    private void adicionarKeyPressed() {
+    private void addKeyPressed() {
         jTextFieldNumero.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {

@@ -25,7 +25,7 @@ public class Exercicio01 implements JFrameBaseInterface {
         gerarDimensoes();
         gerarLocalizacoes();
         adicionarComponentes();
-        acaoBotaoConcatenar();
+        actionButtonConcatenar();
     }
 
     @Override
@@ -35,7 +35,7 @@ public class Exercicio01 implements JFrameBaseInterface {
         screen00.setLocationRelativeTo(null);
         screen00.setSize(300, 300);
         screen00
-                .setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                .setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         screen00.setVisible(true);
     }
 
@@ -75,7 +75,7 @@ public class Exercicio01 implements JFrameBaseInterface {
         jButtonConcatenar.setLocation(10, 100);
     }
 
-    public void acaoBotaoConcatenar() {
+    public void actionButtonConcatenar() {
         jButtonConcatenar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
