@@ -3,6 +3,7 @@ import BaseInterface.JFrameBaseInterface;
 import Exercicio01.Exercicio01;
 import Exercicio02.Exercicio02;
 import Exercicio03.Exercicio03;
+import Exercicio04.Exercicio04;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -28,8 +29,8 @@ public class Tudo implements JFrameBaseInterface {
         acaoJButton00();
         acaoJButton01();
         acaoJButton02();
-         /*
-         acaoJButton03();
+        acaoJButton03();
+        /*
          acaoJButton04();
          acaoJButton05();
          acaoJButton06();*/
@@ -102,37 +103,37 @@ public class Tudo implements JFrameBaseInterface {
 
         });
     }
-    
-     public void acaoJButton01() {
-     jButton01.addActionListener(new ActionListener() {
-     @Override
-     public void actionPerformed(ActionEvent en) {
-     new Exercicio02();
-     }
 
-     });
-     }
+    public void acaoJButton01() {
+        jButton01.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent en) {
+                new Exercicio02();
+            }
 
-     public void acaoJButton02() {
-     jButton02.addActionListener(new ActionListener() {
-     @Override
-     public void actionPerformed(ActionEvent em) {
-     new Exercicio03();
-     }
+        });
+    }
 
-     });
-     }
-/*
-     public void acaoJButton03() {
-     jButton03.addActionListener(new ActionListener() {
-     @Override
-     public void actionPerformed(ActionEvent e) {
-     new Exercicio04();
-     }
+    public void acaoJButton02() {
+        jButton02.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent em) {
+                new Exercicio03();
+            }
 
-     });
-     }
+        });
+    }
 
+    public void acaoJButton03() {
+        jButton03.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent eo) {
+                new Exercicio04();
+            }
+
+        });
+    }
+    /*
      public void acaoJButton04() {
      jButton04.addActionListener(new ActionListener() {
      @Override
